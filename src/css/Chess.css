@@ -1,0 +1,128 @@
+/* Chess Custom Styles */
+
+.folder_folder-chess {
+    display: none;
+    position: fixed;
+    transform: none !important;
+    width: 450px;
+    height: auto;
+    background: #c5c4c4;
+    border: 2px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    outline: 1px solid white;
+    box-shadow: 2px 2px #000;
+    z-index: 10;
+}
+
+.folder_dragbar-chess {
+   display: flex;
+   position: relative;
+   height: 24px;
+   width: 100%;
+   margin-bottom: 1px;
+   align-items: center;
+   justify-content: space-between;
+   user-select: none;
+}
+
+.folder_barname-chess img {
+    position: relative;
+    width: 16px;
+    top: 2px;
+    margin-left: 5px;
+}
+
+.folder_barname-chess span {
+    position: relative;
+    font-size: 15px;
+    color: white;
+    margin-left: 5px;
+    top: 1px;
+}
+
+.folder_barbtn-chess {
+    display: flex;
+    position: relative;
+    margin-right: 4px;
+    gap: 2px;
+}
+
+.folder_barbtn-chess div {
+    width: 17px;
+    height: 17px;
+    background: #c9c9c9;
+    font-weight: bold;
+    border: 1px solid black;
+    border-top-color: rgb(198, 198, 198);
+    border-left-color: rgb(198, 198, 198);
+    box-shadow: inset 1px 1px #ffffff, 1px 1px #000000dd;
+    cursor: default;
+}
+
+.folder_barbtn-chess div:active {
+    border-top-color: black;
+    border-left-color: black;
+    border-bottom-color: white;
+    border-right-color: white;
+}
+
+.x-chess {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    bottom: 6px;
+}
+
+.dash-chess {
+    position: relative;
+    width: 8px;
+    top: 11px;
+    margin: 0 auto;
+    border-bottom: 2px solid black;
+}
+
+.folder_content-chess {
+    padding: 15px;
+}
+
+.chess-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border: 2px solid #dfdfdf;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    box-shadow: -1px -1px #000, inset -1px -1px #000;
+    padding: 20px;
+}
+
+.chess-board-wrapper {
+    width: 350px;
+    max-width: 100%;
+}
+
+.chess-controls {
+    margin-top: 15px;
+}
+
+.btn-retro {
+    background: #c5c4c4;
+    border: 2px solid white;
+    border-right-color: black;
+    border-bottom-color: black;
+    padding: 5px 15px;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: inset 1px 1px #dfdfdf, 1px 1px #000;
+}
+
+.btn-retro:active {
+    border-top-color: black;
+    border-left-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+    box-shadow: inset 1px 1px #000, 1px 1px #dfdfdf;
+}
