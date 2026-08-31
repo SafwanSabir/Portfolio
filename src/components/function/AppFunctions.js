@@ -104,8 +104,6 @@ export function imageMapping (name, type) {
       return Project;
 
       case 'Nft':
-      case 'Note':
-        return file;
       
     case 'Winamp':
       return Winamp;
@@ -349,7 +347,6 @@ export function handleDoubleClickEnterLink(name, handleshow) {
 
   switch(name) {
     case 'Nft': window.open('https://opennft.netlify.app/', '_blank'); break;
-    case 'Note': window.open('https://fullstack-stickynotes.netlify.app/', '_blank'); break;
     case 'Type': window.open('https://safwansabir.github.io/typingGame/', '_blank'); break;
     case 'Fortune': window.open('https://safwansabir.github.io/week_fortune/', '_blank'); break;
     case 'Github': 
@@ -366,7 +363,6 @@ const now = Date.now();
 if (now - lastTapTime < 300) {
   switch(name) {
     case 'Nft': window.open('https://opennft.netlify.app/', '_blank'); break;
-    case 'Note': window.open('https://fullstack-stickynotes.netlify.app/', '_blank'); break;
     case 'Type': window.open('https://safwansabir.github.io/typingGame/', '_blank'); break;
     case 'Github': window.open('https://github.com/SafwanSabir/wins95Portfolio/', '_blank'); break;
     case 'Fortune': window.open('https://safwansabir.github.io/week_fortune/', '_blank'); break;

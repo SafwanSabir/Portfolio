@@ -239,7 +239,7 @@ function App() {
 
   const [desktopIcon, setDesktopIcon] = useState(() => {
     const localItems = localStorage.getItem('icons');
-    const deleteIcon = ['AiAgent','Winamp','Paint','3dObject', 'Fortune', 'Note', 'About', 'Project', 'ResumeFile', 'WebResume', 'Safwan_Sabir_CV.pdf', 'resumeresume'];
+    const deleteIcon = ['AiAgent','Winamp','Paint','3dObject', 'Fortune', 'About', 'Project', 'ResumeFile', 'WebResume', 'Safwan_Sabir_CV.pdf', 'resumeresume'];
 
     const filteredBaseItems = iconInfo.filter(item => !deleteIcon.includes(item.name));
     let parsedItems = localItems ? JSON.parse(localItems) : [...filteredBaseItems];
@@ -1034,7 +1034,6 @@ function handleShowInfolderMobile(name, type) { //important handleshow for in fo
     GamesExpand, setGamesExpand,
     MailExpand, setMailExpand,
     NftExpand, setNftExpand,
-    NoteExpand, setNoteExpand,
     TypeExpand, setTypeExpand,
     handleDoubleTapEnterMobile,
     handleDoubleClickEnterLink,
@@ -1539,7 +1538,7 @@ function ObjectState() {
     { name: 'Picture',     setter: setPictureExpand,    usestate: pictureExpand,    color: 'rgba(85, 50, 148, 0.85)', size: 'large' },
     { name: 'Mail',        setter: setMailExpand,       usestate: MailExpand,       color: 'rgba(178, 26, 77, 0.85)', size: 'small' },
 
-    { name: 'Note',        setter: setNoteExpand,       usestate: NoteExpand,       color: 'rgba(114, 81, 54, 0.85)', size: 'small' },
+
     { name: 'PixelPic',    setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'IE',          setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'Fortune',     setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(224, 88, 43, 0.85)', size: 'small' },
@@ -1677,10 +1676,6 @@ function handleShow(name) {
           handleDoubleClickiframe(setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
-        if(lowerCaseName === 'note') {
-          handleDoubleClickiframe('Note', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
-          handleShow('Internet');
-        }
         if(lowerCaseName === 'fortune') {
         handleDoubleClickiframe('Fortune', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
         handleShow('Internet');
@@ -1708,7 +1703,7 @@ function handleShow(name) {
   if(tap.includes(name)) return;
   setStartActive(false);
 
-  const notToOpenList = ['Run', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+  const notToOpenList = ['Run', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
   if (notToOpenList.includes(name)) return;
 
   setTap(prevTap => [...prevTap, name]);
@@ -1785,10 +1780,6 @@ function handleShowMobile(name) {
           handleDoubleClickiframe(setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
-        if(lowerCaseName === 'note') {
-          handleDoubleClickiframe('Note', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
-          handleShow('Internet');
-        }
         if(lowerCaseName === 'fortune') {
         handleDoubleClickiframe('Fortune', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
         handleShow('Internet');
@@ -1813,7 +1804,7 @@ function handleShowMobile(name) {
     if(tap.includes(name)) return;
     setStartActive(false)
   
-    const notToOpenList = ['Run', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+    const notToOpenList = ['Run', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
     if (notToOpenList.includes(name)) return;
   
     setTap(prevTap => [...prevTap, name]);
