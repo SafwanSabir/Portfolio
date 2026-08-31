@@ -1,11 +1,11 @@
 const patchNotes = [
   {
-    head: "**System Initialization (Safwan OS)**",
+    head: "**Initial Release (Safwan OS)**",
     date: "1998-10-31",
     notes: [
-      "Customized Windows 95 environment specifically for Safwan Sabir.",
-      "Updated global registry with new User ID.",
-      "Optimized boot sequence and browser tab identifiers.",
+      "Launched my custom Windows 95-inspired portfolio environment.",
+      "Integrated my personal projects, CV, and core applications.",
+      "Optimized boot sequence and finalized the UI registry.",
     ]
   },
   {
