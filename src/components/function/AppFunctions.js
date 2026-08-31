@@ -294,8 +294,8 @@ export function handleDoubleClickiframe(name, setOpenProjectExpand, setProjectUr
     break;
 
     case 'PixelPic': 
-        setProjectUrl('https://yuteoctober.github.io/Pixel_pic/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/Pixel_pic/']);
+        setProjectUrl('https://safwansabir.github.io/Pixel_pic/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/Pixel_pic/']);
     break;
 
     case 'IE': 
@@ -337,8 +337,8 @@ export function handleDoubleTapiframeMobile(name, lastTapTime, setLastTapTime, s
         break;
 
         case 'PixelPic': 
-        setProjectUrl('https://yuteoctober.github.io/Pixel_pic/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/Pixel_pic/']);
+        setProjectUrl('https://safwansabir.github.io/Pixel_pic/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/Pixel_pic/']);
         break;
 
         case 'IE': 
