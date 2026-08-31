@@ -1541,7 +1541,7 @@ function ObjectState() {
 
     { name: 'PixelPic',    setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'IE',          setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
-    { name: 'Fortune',     setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(224, 88, 43, 0.85)', size: 'small' },
+
     { name: 'Winamp',      setter: setWinampExpand,     usestate: WinampExpand,     color: 'rgba(105, 136, 145, 0.85)', size: 'small' },
     { name: 'About me',  setter: setResumeFileExpand, usestate: ResumeFileExpand, color: 'rgba(133, 165, 67, 0.85)', size: 'small' },
     { name: 'Contact',  setter: setContactExpand, usestate: ContactExpand, color: 'rgba(50, 100, 200, 0.85)', size: 'small' },
@@ -1676,10 +1676,7 @@ function handleShow(name) {
           handleDoubleClickiframe(setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
-        if(lowerCaseName === 'fortune') {
-        handleDoubleClickiframe('Fortune', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
-        handleShow('Internet');
-        }
+
         if(lowerCaseName === 'pixelpic') {
         handleDoubleClickiframe('PixelPic', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
         handleShow('Internet');
@@ -1703,7 +1700,7 @@ function handleShow(name) {
   if(tap.includes(name)) return;
   setStartActive(false);
 
-  const notToOpenList = ['Run', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+  const notToOpenList = ['Run', 'Bitcoin', 'PixelPic','IE'];
   if (notToOpenList.includes(name)) return;
 
   setTap(prevTap => [...prevTap, name]);
@@ -1780,10 +1777,7 @@ function handleShowMobile(name) {
           handleDoubleClickiframe(setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
-        if(lowerCaseName === 'fortune') {
-        handleDoubleClickiframe('Fortune', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
-        handleShow('Internet');
-        }
+
         if(lowerCaseName === 'pixelpic') {
         handleDoubleClickiframe('PixelPic', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
         handleShow('Internet');
@@ -1804,7 +1798,7 @@ function handleShowMobile(name) {
     if(tap.includes(name)) return;
     setStartActive(false)
   
-    const notToOpenList = ['Run', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+    const notToOpenList = ['Run', 'Bitcoin', 'PixelPic','IE'];
     if (notToOpenList.includes(name)) return;
   
     setTap(prevTap => [...prevTap, name]);

@@ -34,7 +34,7 @@ import paint from '../../assets/paint.png'
 import aiagent from '../../assets/ai_robot.png'
 import cat from '../../assets/catpic.png'
 import patch from '../../assets/patch.png'
-import Fortune from '../../assets/fortune.png'
+
 import run from '../../assets/run.png'
 import backarrow from '../../assets/backarrow.png'
 import tile from '../../assets/tile.png'
@@ -167,12 +167,6 @@ export function imageMapping (name, type) {
     case "Patch":
       return patch;
 
-      return ThreedObject;
-
-    case "Fortune":
-    case "fortune":
-      return Fortune;
-
     case "Run":
       return run;
 
@@ -281,11 +275,6 @@ export function handleDoubleClickiframe(name, setOpenProjectExpand, setProjectUr
         setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/3d_book/']);
     break;
 
-    case 'Fortune': 
-        setProjectUrl('https://safwansabir.github.io/week_fortune/'); 
-        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/week_fortune/']);
-    break;
-
     case 'PixelPic': 
         setProjectUrl('https://safwansabir.github.io/Pixel_pic/'); 
         setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/Pixel_pic/']);
@@ -322,11 +311,6 @@ export function handleDoubleTapiframeMobile(name, lastTapTime, setLastTapTime, s
         setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/3d_book/']);
         break;
 
-        case 'Fortune': 
-        setProjectUrl('https://safwansabir.github.io/week_fortune/'); 
-        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/week_fortune/']);
-        break;
-
         case 'PixelPic': 
         setProjectUrl('https://safwansabir.github.io/Pixel_pic/'); 
         setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/Pixel_pic/']);
@@ -348,7 +332,6 @@ export function handleDoubleClickEnterLink(name, handleshow) {
   switch(name) {
     case 'Nft': window.open('https://opennft.netlify.app/', '_blank'); break;
     case 'Type': window.open('https://safwansabir.github.io/typingGame/', '_blank'); break;
-    case 'Fortune': window.open('https://safwansabir.github.io/week_fortune/', '_blank'); break;
     case 'Github': 
       handleshow('Github'); 
       break;
@@ -365,7 +348,6 @@ if (now - lastTapTime < 300) {
     case 'Nft': window.open('https://opennft.netlify.app/', '_blank'); break;
     case 'Type': window.open('https://safwansabir.github.io/typingGame/', '_blank'); break;
     case 'Github': window.open('https://github.com/SafwanSabir/wins95Portfolio/', '_blank'); break;
-    case 'Fortune': window.open('https://safwansabir.github.io/week_fortune/', '_blank'); break;
     default: break; 
   }
 }

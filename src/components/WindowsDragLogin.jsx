@@ -90,7 +90,12 @@ export default function WindowsDragLogin() {
   // Tile state
   const [tiles, setTiles] = useState(() => {
     const saved = localStorage.getItem('tiles');
-    return saved ? JSON.parse(saved) : initiatedIcon.map(icon => ({ ...icon, id: Date.now() + Math.random() }));
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      const deletedIcons = ['Nft', 'Note', 'Fortune', 'AiAgent', '3dObject'];
+      return parsed.filter(tile => !deletedIcons.includes(tile.content));
+    }
+    return initiatedIcon.map(icon => ({ ...icon, id: Date.now() + Math.random() }));
   });
 
   // Counter for unique IDs
