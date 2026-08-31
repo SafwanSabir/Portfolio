@@ -34,8 +34,8 @@ const form = useRef();
     e.preventDefault();
 
     emailjs
-      .sendForm('service_3jp9sce', 'template_mwqeuol', form.current, {
-        publicKey: 'VEMHa6EGtulAzDYSH',
+      .sendForm('service_toty5lm', 'template_jl59dwg', form.current, {
+        publicKey: '1uTF6_eR3bkWqxA_M',
       })
       .then(
         () => {

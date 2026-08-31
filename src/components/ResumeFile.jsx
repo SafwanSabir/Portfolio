@@ -73,7 +73,7 @@ function ResumeFile() {
           >
             <div className="folder_barname-resumefile">
               <img src={resumefile} alt="resumefile" />
-              <span>Resume</span>
+              <span>About me</span>
             </div>
             <div className="folder_barbtn-resumefile">
               <div onClick={ !isTouchDevice? (e) => {

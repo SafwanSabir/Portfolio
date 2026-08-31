@@ -1,14 +1,5 @@
 [
     {
-        "name": "About",
-        "pic": "About",
-        "folderId": "Desktop",
-        "size": 4,
-        "type": ".exe",
-        "x": 1,
-        "y": 1
-    },
-    {
         "name": "MyComputer",
         "pic": "MyComputer",
         "folderId": "Desktop",
@@ -27,7 +18,7 @@
         "y": 2
     },
     {
-        "name": "Project",
+        "name": "Games",
         "pic": "Project",
         "folderId": "Desktop",
         "size": 2000,
@@ -50,7 +41,7 @@
     {
         "name": "MineSweeper",
         "pic": "MineSweeper",
-        "folderId": "Project",
+        "folderId": "Games",
         "size": 250,
         "type": ".exe",
         "x": 5,
@@ -81,7 +72,7 @@
         "description": "Media player for playing music and audio files."
     },
     {
-        "name": "ResumeFile",
+        "name": "About me",
         "pic": "ResumeFile",
         "folderId": "Resume",
         "size": 28,
@@ -250,8 +241,8 @@
         "description": "Tool for accessing and managing code repositories online."
     },
     {
-        "name": "WebResume",
-        "pic": "WebResume",
+        "name": "Safwan_Sabir_CV.pdf",
+        "pic": "ResumeFile",
         "folderId": "Resume",
         "size": 2100,
         "type": ".exe",
@@ -274,7 +265,7 @@
     {
         "name": "Cat",
         "pic": "Cat",
-        "folderId": "Desktop",
+        "folderId": "Games",
         "size": 5000,
         "type": ".exe",
         "x": 30,
@@ -336,7 +327,7 @@
     {
         "name": "3dObject",
         "pic": "3dObject",
-        "folderId": "Project",
+        "folderId": "Utility",
         "size": 1000,
         "type": ".exe",
         "x": 36,
@@ -367,7 +358,7 @@
     {
         "name": "PixelPic",
         "pic": "PixelPic",
-        "folderId": "Project",
+        "folderId": "Utility",
         "size": 3000,
         "type": ".exe",
         "x": 40,
@@ -393,7 +384,7 @@
     },{
         "name": "Chess",
         "pic": "Chess",
-        "folderId": "Desktop",
+        "folderId": "Games",
         "size": 1800,
         "type": ".exe",
         "x": 43,

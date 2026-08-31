@@ -8,11 +8,12 @@ import Store from './components/Store';
 import Dragdrop from './components/Dragdrop';
 import ContactFolder from './components/ContactFolder';
 import Chess from './components/Chess';
-import MyBioFolder from './components/MyBioFolder';
+
 import MyComputer from './components/MyComputer';
 import ResumeFolder from './components/ResumeFolder';
-import ProjectFolder from './components/ProjectFolder';
+import GamesFolder from './components/GamesFolder';
 import MailFolder from './components/MailFolder';
+import SafwanCV from './assets/Safwan_Sabir_CV.pdf';
 import WebampPlayer from './components/WinampPlayer';
 import ResumeFile from './components/ResumeFile';
 import Shutdown from './components/Shutdown';
@@ -142,7 +143,7 @@ function App() {
   const [key, setKey] = useState(0)
   const [dragging, setDragging] = useState(false)
   const DesktopRef = useRef(null);
-  const ProjectFolderRef = useRef(null);
+  const GamesFolderRef = useRef(null);
   const ResumeFolderRef = useRef(null);
   const BinRef = useRef(null);
   const DiskRef = useRef(null);
@@ -187,21 +188,20 @@ function App() {
   const [tap, setTap] = useState([])
   const [lastTapTime, setLastTapTime] = useState(0)
   const [projectUrl, setProjectUrl] = useState('')
-  const [MybioExpand, setMybioExpand] = useState(
+  const [ResumeExpand, setResumeExpand] = useState(
+  {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
+
+  const [GamesExpand, setGamesExpand] = useState(
   {
     expand: false, // fullscreen
     show: false, // show folder when double clicked
     hide: false, // hide folder to the tap
     focusItem: true, // decide if item is being clicked on or not
-    x: 0, y: 0, // position before fullscreen
-  });
-  const [ResumeExpand, setResumeExpand] = useState(
-  {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
-
-  const [ProjectExpand, setProjectExpand] = useState(
-  {
-    expand: false, show: false, hide: false, focusItem: true,  // focusItem is window, item_1focus - 5 is the icon
-    x: 0, y: 0, zIndex: 1,});
+    zIndex: 10,
+    x: window.innerWidth <= 500 ? 20 : 40,
+    y: window.innerWidth <= 500 ? 40 : 160,
+  }
+  );
 
   const [MailExpand, setMailExpand] = useState(
   {expand: false, show: false, hide: false, focusItem: true, x: 0, y: 0, zIndex: 1,});
@@ -239,7 +239,7 @@ function App() {
 
   const [desktopIcon, setDesktopIcon] = useState(() => {
     const localItems = localStorage.getItem('icons');
-    const deleteIcon = ['Cat', 'AiAgent','Winamp','Paint','3dObject', 'Fortune', 'Nft', 'Note'];
+    const deleteIcon = ['AiAgent','Winamp','Paint','3dObject', 'Fortune', 'Nft', 'Note', 'About', 'Project', 'ResumeFile', 'WebResume'];
 
     const filteredBaseItems = iconInfo.filter(item => !deleteIcon.includes(item.name));
     let parsedItems = localItems ? JSON.parse(localItems) : [...filteredBaseItems];
@@ -252,6 +252,12 @@ function App() {
       parsedItems = parsedItems.map(localItem => {
         const baseItem = filteredBaseItems.find(b => b.name === localItem.name);
         if (baseItem) {
+          if (localItem.name === 'MineSweeper' && localItem.folderId === 'Project') {
+             localItem.folderId = 'Games';
+          }
+          if ((localItem.name === 'Chess' || localItem.name === 'Cat') && localItem.folderId === 'Desktop') {
+             localItem.folderId = 'Games';
+          }
           return { ...localItem, pic: baseItem.pic, category: baseItem.category, description: baseItem.description };
         }
         return localItem;
@@ -667,11 +673,11 @@ useEffect(() => { // touch support device === true
 const handleOnDrag = (name, ref, type) => () => {
   setDragging(true)
   const iconRef = ref
-  if (iconRef && ResumeFolderRef.current && ProjectFolderRef.current) {
-    const BinRect = BinRef.current.getBoundingClientRect();
+   if (iconRef && ResumeFolderRef.current && GamesFolderRef.current) {
     const iconRect = iconRef.getBoundingClientRect();
+    
     const resumeFolderRect = ResumeFolderRef.current.getBoundingClientRect();
-    const projectFolderRect = ProjectFolderRef.current.getBoundingClientRect();
+    const gamesFolderRect = GamesFolderRef.current.getBoundingClientRect();
     const desktopRect = DesktopRef.current.getBoundingClientRect();
     const diskRect = DiskRef.current.getBoundingClientRect();
     const PictureRect = PictureRef.current.getBoundingClientRect();
@@ -1008,7 +1014,7 @@ function handleShowInfolderMobile(name, type) { //important handleshow for in fo
     dragging, setDragging,
     handleOnDrag,
     DesktopRef,
-    ProjectFolderRef,
+    GamesFolderRef,
     ResumeFolderRef,
     DiskRef,
     handleDrop,
@@ -1017,7 +1023,7 @@ function handleShowInfolderMobile(name, type) { //important handleshow for in fo
     startActive, setStartActive,
     time, setTime,
     desktopIcon, setDesktopIcon,
-    MybioExpand, setMybioExpand,
+
     tap, setTap,
     imageMapping,
     lastTapTime, setLastTapTime,
@@ -1025,7 +1031,7 @@ function handleShowInfolderMobile(name, type) { //important handleshow for in fo
     handleShow, handleShowMobile,
     StyleHide,
     isTouchDevice, setIsTouchDevice,
-    ProjectExpand, setProjectExpand,
+    GamesExpand, setGamesExpand,
     MailExpand, setMailExpand,
     NftExpand, setNftExpand,
     NoteExpand, setNoteExpand,
@@ -1222,11 +1228,11 @@ function handleShowInfolderMobile(name, type) { //important handleshow for in fo
         <Notification/>
         <Shutdown/>
         <MyComputer/>
-        <MyBioFolder/>
+
         <ContactFolder/>
         <Chess/>
         <ResumeFolder/>
-        <ProjectFolder/>
+        <GamesFolder/>
         <MailFolder/>
         <ResumeFile/>
         <WebampPlayer/>
@@ -1527,9 +1533,9 @@ async function getChat() {
 function ObjectState() {
   return [
    
-    { name: 'About',       setter: setMybioExpand,      usestate: MybioExpand,      color: 'rgba(46, 108, 176, 0.85)', size: 'small' },
+
     { name: 'Resume',      setter: setResumeExpand,     usestate: ResumeExpand,     color: 'rgba(65, 138, 68, 0.85)', size: 'small' },
-    { name: 'Project',     setter: setProjectExpand,    usestate: ProjectExpand,    color: 'rgba(211, 117, 0, 0.85)', size: 'small' },
+    { name: 'Games',     setter: setGamesExpand,    usestate: GamesExpand,    color: 'rgba(211, 117, 0, 0.85)', size: 'small' },
     { name: 'Picture',     setter: setPictureExpand,    usestate: pictureExpand,    color: 'rgba(85, 50, 148, 0.85)', size: 'large' },
     { name: 'Mail',        setter: setMailExpand,       usestate: MailExpand,       color: 'rgba(178, 26, 77, 0.85)', size: 'small' },
     { name: 'Nft',         setter: setNftExpand,        usestate: NftExpand,        color: 'rgba(142, 29, 126, 0.85)', size: 'small' },
@@ -1540,7 +1546,7 @@ function ObjectState() {
     { name: 'IE',          setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'Fortune',     setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(224, 88, 43, 0.85)', size: 'small' },
     { name: 'Winamp',      setter: setWinampExpand,     usestate: WinampExpand,     color: 'rgba(105, 136, 145, 0.85)', size: 'small' },
-    { name: 'ResumeFile',  setter: setResumeFileExpand, usestate: ResumeFileExpand, color: 'rgba(133, 165, 67, 0.85)', size: 'small' },
+    { name: 'About me',  setter: setResumeFileExpand, usestate: ResumeFileExpand, color: 'rgba(133, 165, 67, 0.85)', size: 'small' },
     { name: 'Contact',  setter: setContactExpand, usestate: ContactExpand, color: 'rgba(50, 100, 200, 0.85)', size: 'small' },
     { name: 'Chess',  setter: setChessExpand, usestate: ChessExpand, color: 'rgba(100, 100, 100, 0.85)', size: 'small' },
     { name: 'MineSweeper', setter: setMineSweeperExpand,usestate: MineSweeperExpand,color: 'rgba(187, 51, 48, 0.85)', size: 'small' },
@@ -1620,6 +1626,11 @@ function handleShow(name) {
   if (pictureMatch) {
     handleDoubleClickPhotoOpen(name, setCurrentPhoto);
     handleShow('Photo');
+    return;
+  }
+
+  if (lowerCaseName === 'safwan_sabir_cv.pdf') {
+    window.open(SafwanCV, '_blank');
     return;
   }
 

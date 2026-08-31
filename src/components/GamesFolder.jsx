@@ -2,10 +2,10 @@ import UseContext from '../Context';
 import { useContext, useRef } from "react";
 import Draggable from 'react-draggable';
 import { motion } from 'framer-motion';
-import Project from '../assets/regFolder.png';
-import '../css/ProjectFolder.css';
+import Games from '../assets/regFolder.png';
+import '../css/GamesFolder.css';
 
-function ProjectFolder() {
+function GamesFolder() {
   const iconRefs = useRef([]);
 
   const {
@@ -25,12 +25,12 @@ function ProjectFolder() {
     dropTargetFolder,
     handleDrop,
     handleOnDrag,
-    ProjectFolderRef,
+    GamesFolderRef,
     imageMapping,
     desktopIcon,
     themeDragBar,
-    ProjectExpand,
-    setProjectExpand,
+    GamesExpand,
+    setGamesExpand,
     lastTapTime,
     setLastTapTime,
     StyleHide,
@@ -46,7 +46,7 @@ function ProjectFolder() {
 
   function handleDragStop(event, data) {
     const { x, y } = data;
-    setProjectExpand((prev) => ({
+    setGamesExpand((prev) => ({
       ...prev,
       x,
       y,
@@ -54,7 +54,7 @@ function ProjectFolder() {
   }
 
   function handleExpandStateToggle() {
-    setProjectExpand((prevState) => ({
+    setGamesExpand((prevState) => ({
       ...prevState,
       expand: !prevState.expand,
     }));
@@ -63,7 +63,7 @@ function ProjectFolder() {
   function handleExpandStateToggleMobile() {
     const now = Date.now();
     if (now - lastTapTime < 300) {
-      setProjectExpand((prevState) => ({
+      setGamesExpand((prevState) => ({
         ...prevState,
         expand: !prevState.expand,
       }));
@@ -74,74 +74,74 @@ function ProjectFolder() {
   return (
     <Draggable
       axis="both"
-      handle=".folder_dragbar-project"
+      handle=".folder_dragbar-Games"
       grid={[1, 1]}
       scale={1}
-      disabled={ProjectExpand.expand}
+      disabled={GamesExpand.expand}
       bounds={{ top: 0 }}
       defaultPosition={{
         x: window.innerWidth <= 500 ? 20 : 40,
         y: window.innerWidth <= 500 ? 40 : 160,
       }}
       onStop={handleDragStop}
-      onStart={() => handleSetFocusItemTrue('Project')}
+      onStart={() => handleSetFocusItemTrue('Games')}
     >
       <div
-        onContextMenu={() => setCurrentRightClickFolder('Project')}
-        onTouchStart={() => setCurrentRightClickFolder('Project')}
-        className="folder_folder-project"
-        ref={ProjectFolderRef}
+        onContextMenu={() => setCurrentRightClickFolder('Games')}
+        onTouchStart={() => setCurrentRightClickFolder('Games')}
+        className="folder_folder-Games"
+        ref={GamesFolderRef}
         onClick={(e) => {
           e.stopPropagation();
-          handleSetFocusItemTrue('Project');
+          handleSetFocusItemTrue('Games');
         }}
         style={{
           ...(
-            ProjectExpand.expand
-              ? inlineStyleExpand('Project')
-              : inlineStyle('Project')
+            GamesExpand.expand
+              ? inlineStyleExpand('Games')
+              : inlineStyle('Games')
           ),
           overflow: dragging ? '' : 'hidden',
         }}
       >
         <div
-          className="folder_dragbar-project"
+          className="folder_dragbar-Games"
           onDoubleClick={handleExpandStateToggle}
           onTouchStart={handleExpandStateToggleMobile}
-          style={{ background: ProjectExpand.focusItem ? themeDragBar : '#757579' }}
+          style={{ background: GamesExpand.focusItem ? themeDragBar : '#757579' }}
         >
-          <div className="folder_barname-project">
-            <img src={Project} alt="Project" />
-            <span>Project</span>
+          <div className="folder_barname-Games">
+            <img src={Games} alt="Games" />
+            <span>Games</span>
           </div>
-          <div className="folder_barbtn-project">
+          <div className="folder_barbtn-Games">
             <div
               onClick={!isTouchDevice ? (e) => {
                 e.stopPropagation();
-                setProjectExpand((prev) => ({ ...prev, hide: true, focusItem: false }));
-                StyleHide('Project');
+                setGamesExpand((prev) => ({ ...prev, hide: true, focusItem: false }));
+                StyleHide('Games');
               } : undefined}
               onTouchEnd={(e) => {
                 e.stopPropagation();
-                setProjectExpand((prev) => ({ ...prev, hide: true, focusItem: false }));
-                StyleHide('Project');
+                setGamesExpand((prev) => ({ ...prev, hide: true, focusItem: false }));
+                StyleHide('Games');
               }}
               onTouchStart={(e) => e.stopPropagation()}
             >
-              <p className="dash-project"></p>
+              <p className="dash-Games"></p>
             </div>
             <div
               onClick={!isTouchDevice ? handleExpandStateToggle : undefined}
               onTouchEnd={handleExpandStateToggle}
             >
-              <motion.div className={`expand-project ${ProjectExpand.expand ? 'full' : ''}`}></motion.div>
-              {ProjectExpand.expand && <div className="expand_2-project"></div>}
+              <motion.div className={`expand-Games ${GamesExpand.expand ? 'full' : ''}`}></motion.div>
+              {GamesExpand.expand && <div className="expand_2-Games"></div>}
             </div>
             <div>
               <p
-                className="x-project"
-                onClick={!isTouchDevice ? () => deleteTap('Project') : undefined}
-                onTouchEnd={() => deleteTap('Project')}
+                className="x-Games"
+                onClick={!isTouchDevice ? () => deleteTap('Games') : undefined}
+                onTouchEnd={() => deleteTap('Games')}
               >
                 ×
               </p>
@@ -149,7 +149,7 @@ function ProjectFolder() {
           </div>
         </div>
 
-        <div className="file_edit_container-project">
+        <div className="file_edit_container-Games">
           <p>File<span style={{ left: '-23px' }}>_</span></p>
           <p>Edit<span style={{ left: '-24px' }}>_</span></p>
           <p>View<span style={{ left: '-32px' }}>_</span></p>
@@ -157,24 +157,24 @@ function ProjectFolder() {
         </div>
 
         <div
-          className="folder_content-project"
+          className="folder_content-Games"
           onClick={() => iconFocusIcon('')}
           style={{
-            height: ProjectExpand.expand ? 'calc(100svh - 122px)' : '',
+            height: GamesExpand.expand ? 'calc(100svh - 122px)' : '',
             overflow: dragging ? '' : 'hidden',
           }}
         >
-          <div className="parent_container-project" key={key}>
+          <div className="parent_container-Games" key={key}>
             <div
-              className="item_container-project"
+              className="item_container-Games"
               style={{ position: dragging ? 'absolute' : '' }}
               onClick={(e) => {
                 e.stopPropagation() 
                 iconFocusIcon('');
-                handleSetFocusItemTrue('Project');
+                handleSetFocusItemTrue('Games');
               }}
             >
-              {desktopIcon.filter((icon) => icon.folderId === 'Project').map((icon) => (
+              {desktopIcon.filter((icon) => icon.folderId === 'Games').map((icon) => (
                 <Draggable
                   axis="both"
                   handle=".icon"
@@ -183,7 +183,7 @@ function ProjectFolder() {
                   bounds={false}
                   onStart={() => {
                     setDropTargetFolder('');
-                    handleSetFocusItemTrue('Project');
+                    handleSetFocusItemTrue('Games');
                   }}
                   onDrag={handleOnDrag(icon.name, iconRefs.current[icon.name])}
                   onStop={(e) => {
@@ -234,18 +234,18 @@ function ProjectFolder() {
           </div>
         </div>
 
-        <div className="btm_bar_container-project">
-          <div className="object_bar-project">
+        <div className="btm_bar_container-Games">
+          <div className="object_bar-Games">
             <p>
-              {desktopIcon.filter((icon) => icon.folderId === 'Project').some((icon) => icon.focus)
+              {desktopIcon.filter((icon) => icon.folderId === 'Games').some((icon) => icon.focus)
                 ? '1 object(s) selected'
-                : `${desktopIcon.filter((icon) => icon.folderId === 'Project').length} object(s)`}
+                : `${desktopIcon.filter((icon) => icon.folderId === 'Games').length} object(s)`}
             </p>
           </div>
-          <div className="size_bar-project">
+          <div className="size_bar-Games">
             <p>
               {(() => {
-                const filteredIcons = desktopIcon.filter((icon) => icon.folderId === 'Project');
+                const filteredIcons = desktopIcon.filter((icon) => icon.folderId === 'Games');
                 const totalSize = filteredIcons.reduce((total, icon) => total + icon.size, 0);
                 return filteredIcons.every((icon) => !icon.focus)
                   ? totalSize
@@ -259,4 +259,4 @@ function ProjectFolder() {
   );
 }
 
-export default ProjectFolder;
+export default GamesFolder;

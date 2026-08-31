@@ -1,6 +1,6 @@
 /* ------------ Folders ---------------- */
 
-.folder_folder-project {
+.folder_folder-Games {
     display: none;
     position: fixed;
     width: 400px;
@@ -20,13 +20,13 @@
 }
 
 @media screen and (max-width: 450px) {
-    .folder_folder-project {
+    .folder_folder-Games {
         width: 84%;
         min-width: 300px;
     }
 }
 
-.folder_folder-project .folder_dragbar-project {
+.folder_folder-Games .folder_dragbar-Games {
    display: flex;
    position: relative;
    height: 24px;
@@ -40,28 +40,28 @@
     user-select: none;
 }
 
-.folder_barname-project img {
+.folder_barname-Games img {
     position: relative;
     width: 16px;
     top: 3px;
     margin-left: 5px;
 }
 
-.folder_barname-project span {
+.folder_barname-Games span {
     position: relative;
     font-size: 15px;
     color: white;
     margin-left: 5px;
 }
 
-.folder_folder-project .folder_barbtn-project {
+.folder_folder-Games .folder_barbtn-Games {
     display: flex;
     position: relative;
     margin-right: 4px;
     gap: 2px;
 }
 
-.folder_barbtn-project div {
+.folder_barbtn-Games div {
     width: 17px;
     height: 17px;
     background: #c9c9c9;
@@ -72,12 +72,12 @@
     cursor: default;
 }
 
-.folder_barbtn-project div:not(.expand-project):active {
+.folder_barbtn-Games div:not(.expand-Games):active {
     border-top-color: black;border-left-color: black;
     border-bottom-color: white;border-right-color: white;
 }
 
-.folder_barbtn-project .x-project {
+.folder_barbtn-Games .x-Games {
     position: relative;
     text-align: center;
     font-size: 18px;
@@ -86,20 +86,20 @@
 
 /* support only safari */
 @supports (-webkit-touch-callout: none) {
-    .folder_barbtn-project .x-project {
+    .folder_barbtn-Games .x-Games {
         bottom: 7px; 
         left: 1px;
     }
 }
 
-.folder_barbtn-project .dash-project {
+.folder_barbtn-Games .dash-Games {
     position: relative;
     width: 8px;
     top: 11px;
     margin: 0 auto;
     border-bottom: 2px solid black;
 }
-.folder_barbtn-project .expand-project {
+.folder_barbtn-Games .expand-Games {
     position: relative;
     width: 10px;
     height: 10px;
@@ -111,7 +111,7 @@
     z-index: 2;
 }
 
-.folder_barbtn-project .expand-project.full {
+.folder_barbtn-Games .expand-Games.full {
     position: relative;
     width: 8px;
     height: 8px;
@@ -124,7 +124,7 @@
     z-index: 1;
 }
 
-.folder_barbtn-project .expand_2-project {
+.folder_barbtn-Games .expand_2-Games {
     position: relative;
     width: 8px;
     height: 8px;
@@ -136,7 +136,7 @@
     left: 1.5px;
 }
 
-.folder_folder-project .file_edit_container-project {
+.folder_folder-Games .file_edit_container-Games {
     display: flex;
     gap: 5px;
     font-size: 15px;
@@ -144,11 +144,11 @@
     cursor: default;
 }
 
-.file_edit_container-project span {
+.file_edit_container-Games span {
     position: relative;
 }
 
-.folder_folder-project .folder_content-project {
+.folder_folder-Games .folder_content-Games {
     position: relative;
     width: calc(100% - 6px);
     height: calc(100% - 82px);
@@ -160,13 +160,13 @@
     background: rgb(255, 255, 255);
 }
 
-.parent_container-project {
+.parent_container-Games {
     height: calc(100%);
     overflow-y: auto;
     
 }
 
-.parent_container-project .item_container-project {
+.parent_container-Games .item_container-Games {
     display: flex;
     width: fit-content;
     position: relative;
@@ -175,7 +175,7 @@
     padding: 8px 2px;
 }
 
-.item_container-project .item_1-project {
+.item_container-Games .item_1-Games {
     display: grid;
     position: relative;
     place-items: center;
@@ -185,7 +185,7 @@
     background: red;
 }
 
-.item_container-project img {
+.item_container-Games img {
     width: 32px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -193,15 +193,15 @@
     user-select: none;
 }
 
-.item_container-project .item_1_img_focus-project {
+.item_container-Games .item_1_img_focus-Games {
     filter: brightness(8%) sepia(10) saturate(50) hue-rotate(200deg);
 }
 
-.item_container-project .p_normal {
+.item_container-Games .p_normal {
     color: black!important;
 }
 
-.item_1_p_focus-project {
+.item_1_p_focus-Games {
     background: #091558;
     height: 15px;
     border: 1px dotted white;
@@ -210,7 +210,7 @@
 
 
 
-.folder_folder-project .btm_bar_container-project {
+.folder_folder-Games .btm_bar_container-Games {
     display: flex;
     gap: 5px;
     width: calc(100% - 6px);
@@ -220,20 +220,20 @@
     cursor: default;
 } 
 
-.btm_bar_container-project .object_bar-project {
+.btm_bar_container-Games .object_bar-Games {
     width: 80%;
     border: 1px solid black;
     border-right-color: white;
     border-bottom-color: white;
 }
-.btm_bar_container-project .size_bar-project {
+.btm_bar_container-Games .size_bar-Games {
     width: 55%;
     border: 1px solid black;
     border-right-color: white;
     border-bottom-color: white;
 }
 
-.btm_bar_container-project p {
+.btm_bar_container-Games p {
     position: relative;
     font-size: 14px;
     padding-top: 2px;
@@ -241,7 +241,7 @@
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) and (min-width: 0px) {
-    .folder_barbtn-project .x-project {      
+    .folder_barbtn-Games .x-Games {      
         left: 1px;
     }
 }

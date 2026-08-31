@@ -68,7 +68,7 @@ function Run() {
 
         case 'resume': // Resume File
           setTimeout(() => {
-            handleShow('ResumeFile');
+            handleShow('About me');
             closeRun();
           }, 100);
           break;
@@ -90,7 +90,7 @@ function Run() {
         const lowerCaseName = item.name.toLowerCase();
         return (
           !cannotOpenFile.includes(lowerCaseName) &&
-          lowerCaseName !== 'resumefile' &&
+          lowerCaseName !== 'aboutme' &&
           !lowerCaseName.startsWith('0')
         );
       })
