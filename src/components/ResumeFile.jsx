@@ -58,14 +58,14 @@ function ResumeFile() {
           y: window.innerWidth <= 500 ? 100 : 90,
         }}
         onStop={(event, data) => handleDragStop(event, data)}
-        onStart={() => handleSetFocusItemTrue('ResumeFile')}
+        onStart={() => handleSetFocusItemTrue('About me')}
       >
         <div className='folder_folder-resumefile' 
             onClick={(e) => {
               e.stopPropagation();
-              handleSetFocusItemTrue('ResumeFile');
+              handleSetFocusItemTrue('About me');
             }}
-            style={ ResumeFileExpand.expand ? inlineStyleExpand('ResumeFile') : inlineStyle('ResumeFile')}>
+            style={ ResumeFileExpand.expand ? inlineStyleExpand('About me') : inlineStyle('About me')}>
           <div className="folder_dragbar-resumefile"
               onDoubleClick={handleExpandStateToggle}
               onTouchStart={handleExpandStateToggleMobile}
@@ -79,12 +79,12 @@ function ResumeFile() {
               <div onClick={ !isTouchDevice? (e) => {
                 e.stopPropagation()
                 setResumeFileExpand(prev => ({...prev, hide: true, focusItem: false}))
-                StyleHide('ResumeFile') 
+                StyleHide('About me') 
               } : undefined }
                    onTouchEnd={(e) => {
                     e.stopPropagation()
                     setResumeFileExpand(prev => ({...prev, hide: true, focusItem: false}))
-                    StyleHide('ResumeFile')
+                    StyleHide('About me')
                   }}
                   onTouchStart={(e) => e.stopPropagation()}
               >
@@ -101,10 +101,10 @@ function ResumeFile() {
               <div>
                 <p className='x-resumefile'
                  onClick={!isTouchDevice ? () => {
-                  deleteTap('ResumeFile')
+                  deleteTap('About me')
                  }: undefined}
                 onTouchEnd={() => {
-                  deleteTap('ResumeFile')
+                  deleteTap('About me')
               }}
                 >×</p>
               </div>

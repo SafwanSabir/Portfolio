@@ -158,20 +158,7 @@ export default function Tile({ id, content, index, size, color, moveTile, imageM
           backgroundSize: '105px',
           backgroundRepeat: 'no-repeat',
         };
-      case '3dObject':
-        return {
-          backgroundImage: `url(${cube})`,
-          backgroundPosition: '50% 10%',
-          backgroundSize: '110px',
-          backgroundRepeat: 'no-repeat',
-        };
-      case 'AiAgent':
-        return {
-          backgroundImage: `url(${agent})`,
-          backgroundPosition: '50% 100%',
-          backgroundSize: '85px',
-          backgroundRepeat: 'no-repeat',
-        };
+
       case 'Winamp':
         return {
           backgroundImage: `url(${music})`,
@@ -347,8 +334,8 @@ export default function Tile({ id, content, index, size, color, moveTile, imageM
   // function mappingIconImage(content) {
   //   const banned = [
   //     'MSN', 'Picture', 'Settings', 
-  //     'Fortune', 'Nft', '3dObject', 
-  //     'AiAgent', 'Winamp', 'MyComputer',
+  //     'Fortune', 'Nft',  
+  //      'Winamp', 'MyComputer',
   //     'Mail', 'ResumeFile'
   //   ];
   //   if (banned.includes(content)) return;

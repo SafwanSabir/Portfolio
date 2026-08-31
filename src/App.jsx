@@ -239,7 +239,7 @@ function App() {
 
   const [desktopIcon, setDesktopIcon] = useState(() => {
     const localItems = localStorage.getItem('icons');
-    const deleteIcon = ['AiAgent','Winamp','Paint','3dObject', 'Fortune', 'Nft', 'Note', 'About', 'Project', 'ResumeFile', 'WebResume'];
+    const deleteIcon = ['AiAgent','Winamp','Paint','3dObject', 'Fortune', 'Nft', 'Note', 'About', 'Project', 'ResumeFile', 'WebResume', 'Safwan_Sabir_CV.pdf', 'resumeresume'];
 
     const filteredBaseItems = iconInfo.filter(item => !deleteIcon.includes(item.name));
     let parsedItems = localItems ? JSON.parse(localItems) : [...filteredBaseItems];
@@ -1540,8 +1540,6 @@ function ObjectState() {
     { name: 'Mail',        setter: setMailExpand,       usestate: MailExpand,       color: 'rgba(178, 26, 77, 0.85)', size: 'small' },
     { name: 'Nft',         setter: setNftExpand,        usestate: NftExpand,        color: 'rgba(142, 29, 126, 0.85)', size: 'small' },
     { name: 'Note',        setter: setNoteExpand,       usestate: NoteExpand,       color: 'rgba(114, 81, 54, 0.85)', size: 'small' },
-    { name: 'AiAgent',     setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(82, 117, 132, 0.85)', size: 'small' },
-    { name: '3dObject',    setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'PixelPic',    setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'IE',          setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'Fortune',     setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(224, 88, 43, 0.85)', size: 'small' },
@@ -1629,8 +1627,10 @@ function handleShow(name) {
     return;
   }
 
-  if (lowerCaseName === 'safwan_sabir_cv.pdf') {
-    window.open(SafwanCV, '_blank');
+  if (lowerCaseName === 'cv') {
+    setProjectUrl(SafwanCV);
+    setBackTrackIe(prev => [...prev, SafwanCV]);
+    handleShow('Internet');
     return;
   }
 
@@ -1641,7 +1641,7 @@ function handleShow(name) {
   }
 
   allSetItems.forEach((item) => {
-    const itemName = item.name.toLowerCase().trim();
+    const itemName = item.name.toLowerCase().split(' ').join('');
 
     if(itemName === lowerCaseName) {
       setTimeout(() => {
@@ -1681,14 +1681,6 @@ function handleShow(name) {
           handleDoubleClickiframe('Note', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
-        if(lowerCaseName === 'aiagent') {
-          handleDoubleClickiframe('AiAgent', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe   )
-          handleShow('Internet');
-        }
-        if(lowerCaseName === '3dobject') {
-        handleDoubleClickiframe('3dObject', setOpenProjectExpand, setProjectUrl , setBackTrackIe, setForwardTrackIe)
-        handleShow('Internet');
-        }
         if(lowerCaseName === 'fortune') {
         handleDoubleClickiframe('Fortune', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
         handleShow('Internet');
@@ -1716,7 +1708,7 @@ function handleShow(name) {
   if(tap.includes(name)) return;
   setStartActive(false);
 
-  const notToOpenList = ['Run', 'Nft', 'Note', 'AiAgent', '3dObject', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+  const notToOpenList = ['Run', 'Nft', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
   if (notToOpenList.includes(name)) return;
 
   setTap(prevTap => [...prevTap, name]);
@@ -1747,6 +1739,13 @@ function handleShowMobile(name) {
       return;
     }
   
+    if (lowerCaseName === 'cv') {
+      setProjectUrl(SafwanCV);
+      setBackTrackIe(prev => [...prev, SafwanCV]);
+      handleShowMobile('Internet');
+      return;
+    }
+  
     if (!itemExists) {
       setRegErrorPopUp(true);
       setRegErrorPopUpVal(name);
@@ -1755,7 +1754,7 @@ function handleShowMobile(name) {
   
     allSetItems.forEach((item) => {
   
-      const itemName = item.name.toLowerCase().trim();
+      const itemName = item.name.toLowerCase().split(' ').join('');
   
       if(itemName === lowerCaseName) {
         setTimeout(() => {
@@ -1790,14 +1789,6 @@ function handleShowMobile(name) {
           handleDoubleClickiframe('Note', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
-        if(lowerCaseName === 'aiagent') {
-          handleDoubleClickiframe('AiAgent', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
-          handleShow('Internet');
-        }
-        if(lowerCaseName === '3dobject') {
-        handleDoubleClickiframe('3dObject', setOpenProjectExpand, setProjectUrl)
-        handleShow('Internet');
-        }
         if(lowerCaseName === 'fortune') {
         handleDoubleClickiframe('Fortune', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
         handleShow('Internet');
@@ -1822,7 +1813,7 @@ function handleShowMobile(name) {
     if(tap.includes(name)) return;
     setStartActive(false)
   
-    const notToOpenList = ['Run', 'Nft', 'Note', 'AiAgent', '3dObject', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+    const notToOpenList = ['Run', 'Nft', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
     if (notToOpenList.includes(name)) return;
   
     setTap(prevTap => [...prevTap, name]);
@@ -1880,7 +1871,7 @@ function handleShowMobile(name) {
     const newZIndex = (maxZindexRef.current || 0) + 1;
 
     setState.forEach((item) => {
-      const itemName = item.name.toLowerCase();
+      const itemName = item.name.toLowerCase().split(' ').join('');
 
       if (itemName === LowerCaseName) {
         if (item.type === 'userCreatedFolder') {

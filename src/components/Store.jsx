@@ -393,7 +393,7 @@ function Store() {
                 onClick={() => setItemBeingSelected(item)}
               >
                 <div className='section_two_img'>
-                  <img src={imageMapping(item.name)} alt={item.name} />
+                  <img src={imageMapping(item.pic)} alt={item.name} />
                 </div>
                 <div className='section_two_text'>
                   <p className='section_two_text_name'>{item.name}</p>
@@ -408,7 +408,7 @@ function Store() {
             {itemBeingSelected && (
               <>
                 <img 
-                  src={imageMapping(itemBeingSelected.name)} 
+                  src={imageMapping(itemBeingSelected.pic)} 
                   alt={itemBeingSelected.name} 
                 />
                 <h3>{itemBeingSelected.name}</h3>

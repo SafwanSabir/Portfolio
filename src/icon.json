@@ -36,7 +36,6 @@
         "y": 4,
         "category": "Productivity",
         "description": "Email client for sending and receiving emails."
-
     },
     {
         "name": "MineSweeper",
@@ -82,7 +81,6 @@
         "category": "Productivity",
         "description": "Digital resume file containing work experience and skills."
     },
-
     {
         "name": "Hard Disk (C:)",
         "pic": "Hard Disk (C:)",
@@ -241,7 +239,7 @@
         "description": "Tool for accessing and managing code repositories online."
     },
     {
-        "name": "Safwan_Sabir_CV.pdf",
+        "name": "CV",
         "pic": "ResumeFile",
         "folderId": "Resume",
         "size": 2100,
@@ -249,18 +247,7 @@
         "x": 28,
         "y": 28,
         "category": "Productivity",
-        "description": "Interactive web-based resume showcasing personal work and experience."
-    },
-    {
-        "name": "AiAgent",
-        "pic": "AiAgent",
-        "folderId": "Desktop",
-        "size": 10000,
-        "type": ".exe",
-        "x": 29,
-        "y": 29,
-        "category": "Productivity",
-        "description": "AI-powered personal assistant for answering questions."
+        "description": "A comprehensive PDF document detailing my professional experience, skills, and academic background."
     },
     {
         "name": "Cat",
@@ -296,7 +283,7 @@
     {
         "name": "Paint",
         "pic": "Paint",
-        "folderId": "Utility",
+        "folderId": "Games",
         "size": 200,
         "type": ".exe",
         "x": 33,
@@ -323,17 +310,6 @@
         "y": 35,
         "category": "Utilities",
         "description": "Software patch used to fix bugs or apply updates."
-    },
-    {
-        "name": "3dObject",
-        "pic": "3dObject",
-        "folderId": "Utility",
-        "size": 1000,
-        "type": ".exe",
-        "x": 36,
-        "y": 36,
-        "category": "Productivity",
-        "description": "3D Interactive modeling, three-dimensional objects."
     },
     {
         "name": "TaskManager",
@@ -365,29 +341,38 @@
         "y": 40,
         "category": "Productivity",
         "description": "Pixel art creation and editing tool for designing pixel-based images."
-    },{
+    },
+    {
         "name": "IE",
         "pic": "IE",
         "folderId": "Desktop",
         "size": 3000,
         "type": ".exe",
         "x": 41,
-        "y": 41
-    },{
+        "y": 41,
+        "category": "Utilities",
+        "description": "The classic Internet Explorer browser for surfing the web."
+    },
+    {
         "name": "Contact",
         "pic": "Mail",
         "folderId": "Desktop",
         "size": 1500,
         "type": ".exe",
         "x": 42,
-        "y": 42
-    },{
+        "y": 42,
+        "category": "Utilities",
+        "description": "Address book for keeping in touch with important contacts."
+    },
+    {
         "name": "Chess",
         "pic": "Chess",
         "folderId": "Games",
         "size": 1800,
         "type": ".exe",
         "x": 43,
-        "y": 43
+        "y": 43,
+        "category": "Games",
+        "description": "A classic game of chess against an AI or local player."
     }
 ]

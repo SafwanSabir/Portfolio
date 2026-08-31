@@ -47,7 +47,7 @@ function MyBioFolder() {
         <br />
         <strong>Information:</strong>
         <br />
-        <span>Yute S. Lilitprapun</span>
+        <span>Safwan Sabir</span>
         <br />
         <span>Front-end developer</span>
         <br />

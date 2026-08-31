@@ -34,7 +34,6 @@ import paint from '../../assets/paint.png'
 import aiagent from '../../assets/ai_robot.png'
 import cat from '../../assets/catpic.png'
 import patch from '../../assets/patch.png'
-import ThreedObject from '../../assets/3dObject.png'
 import Fortune from '../../assets/fortune.png'
 import run from '../../assets/run.png'
 import backarrow from '../../assets/backarrow.png'
@@ -160,7 +159,6 @@ export function imageMapping (name, type) {
     case "Paint":
       return paint;
 
-    case "AiAgent":
       return aiagent;
 
     case "Cat":
@@ -171,7 +169,6 @@ export function imageMapping (name, type) {
     case "Patch":
       return patch;
 
-    case "3dObject":
       return ThreedObject;
 
     case "Fortune":
@@ -278,19 +275,17 @@ export function handleDoubleClickiframe(name, setOpenProjectExpand, setProjectUr
         setBackTrackIe(prev => [...prev, 'https://fullstack-stickynotes.netlify.app/']);
     break;
 
-    case 'AiAgent': 
-        setProjectUrl('https://yuteoctober.github.io/AI_chatbot/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/AI_chatbot/']);
+        setProjectUrl('https://safwansabir.github.io/AI_chatbot/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/AI_chatbot/']);
     break;
 
-    case '3dObject': 
-        setProjectUrl('https://yuteoctober.github.io/3d_book/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/3d_book/']);
+        setProjectUrl('https://safwansabir.github.io/3d_book/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/3d_book/']);
     break;
 
     case 'Fortune': 
-        setProjectUrl('https://yuteoctober.github.io/week_fortune/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/week_fortune/']);
+        setProjectUrl('https://safwansabir.github.io/week_fortune/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/week_fortune/']);
     break;
 
     case 'PixelPic': 
@@ -321,19 +316,17 @@ export function handleDoubleTapiframeMobile(name, lastTapTime, setLastTapTime, s
         setBackTrackIe(prev => [...prev, 'https://fullstack-stickynotes.netlify.app/']);
         break;
   
-        case 'AiAgent': 
-        setProjectUrl('https://yuteoctober.github.io/AI_chatbot/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/AI_chatbot/']);
+        setProjectUrl('https://safwansabir.github.io/AI_chatbot/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/AI_chatbot/']);
         break;
 
-        case '3dObject': 
-        setProjectUrl('https://yuteoctober.github.io/3d_book/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/3d_book/']);
+        setProjectUrl('https://safwansabir.github.io/3d_book/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/3d_book/']);
         break;
 
         case 'Fortune': 
-        setProjectUrl('https://yuteoctober.github.io/week_fortune/'); 
-        setBackTrackIe(prev => [...prev, 'https://yuteoctober.github.io/week_fortune/']);
+        setProjectUrl('https://safwansabir.github.io/week_fortune/'); 
+        setBackTrackIe(prev => [...prev, 'https://safwansabir.github.io/week_fortune/']);
         break;
 
         case 'PixelPic': 
@@ -357,9 +350,8 @@ export function handleDoubleClickEnterLink(name, handleshow) {
   switch(name) {
     case 'Nft': window.open('https://opennft.netlify.app/', '_blank'); break;
     case 'Note': window.open('https://fullstack-stickynotes.netlify.app/', '_blank'); break;
-    case 'Type': window.open('https://yuteoctober.github.io/typingGame/', '_blank'); break;
-    case '3dObject': window.open('https://yuteoctober.github.io/3d_book/', '_blank'); break;
-    case 'Fortune': window.open('https://yuteoctober.github.io/week_fortune/', '_blank'); break;
+    case 'Type': window.open('https://safwansabir.github.io/typingGame/', '_blank'); break;
+    case 'Fortune': window.open('https://safwansabir.github.io/week_fortune/', '_blank'); break;
     case 'Github': 
       handleshow('Github'); 
       break;
@@ -375,10 +367,9 @@ if (now - lastTapTime < 300) {
   switch(name) {
     case 'Nft': window.open('https://opennft.netlify.app/', '_blank'); break;
     case 'Note': window.open('https://fullstack-stickynotes.netlify.app/', '_blank'); break;
-    case 'Type': window.open('https://yuteoctober.github.io/typingGame/', '_blank'); break;
-    case 'Github': window.open('https://github.com/Yuteoctober/wins95Portfolio/', '_blank'); break;
-    case '3dObject': window.open('https://yuteoctober.github.io/3d_book/', '_blank'); break;
-    case 'Fortune': window.open('https://yuteoctober.github.io/week_fortune/', '_blank'); break;
+    case 'Type': window.open('https://safwansabir.github.io/typingGame/', '_blank'); break;
+    case 'Github': window.open('https://github.com/SafwanSabir/wins95Portfolio/', '_blank'); break;
+    case 'Fortune': window.open('https://safwansabir.github.io/week_fortune/', '_blank'); break;
     default: break; 
   }
 }

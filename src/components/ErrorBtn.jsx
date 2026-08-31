@@ -83,7 +83,7 @@ function ErrorBtn({themeDragBar, stateVal, text, setStateVal, runOpenFuction}) {
 
             case "webresume": 
                 
-            return window.open('https://yuteoctober.github.io/resume_web/', '_blank');
+            return window.open('https://safwansabir.github.io/resume_web/', '_blank');
             
             case "cat": 
                 setRunCatVideo(true)
