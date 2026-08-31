@@ -239,7 +239,7 @@ function App() {
 
   const [desktopIcon, setDesktopIcon] = useState(() => {
     const localItems = localStorage.getItem('icons');
-    const deleteIcon = ['AiAgent','Winamp','Paint','3dObject', 'Fortune', 'Nft', 'Note', 'About', 'Project', 'ResumeFile', 'WebResume', 'Safwan_Sabir_CV.pdf', 'resumeresume'];
+    const deleteIcon = ['AiAgent','Winamp','Paint','3dObject', 'Fortune', 'Note', 'About', 'Project', 'ResumeFile', 'WebResume', 'Safwan_Sabir_CV.pdf', 'resumeresume'];
 
     const filteredBaseItems = iconInfo.filter(item => !deleteIcon.includes(item.name));
     let parsedItems = localItems ? JSON.parse(localItems) : [...filteredBaseItems];
@@ -1538,7 +1538,7 @@ function ObjectState() {
     { name: 'Games',     setter: setGamesExpand,    usestate: GamesExpand,    color: 'rgba(211, 117, 0, 0.85)', size: 'small' },
     { name: 'Picture',     setter: setPictureExpand,    usestate: pictureExpand,    color: 'rgba(85, 50, 148, 0.85)', size: 'large' },
     { name: 'Mail',        setter: setMailExpand,       usestate: MailExpand,       color: 'rgba(178, 26, 77, 0.85)', size: 'small' },
-    { name: 'Nft',         setter: setNftExpand,        usestate: NftExpand,        color: 'rgba(142, 29, 126, 0.85)', size: 'small' },
+
     { name: 'Note',        setter: setNoteExpand,       usestate: NoteExpand,       color: 'rgba(114, 81, 54, 0.85)', size: 'small' },
     { name: 'PixelPic',    setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
     { name: 'IE',          setter: setOpenProjectExpand,usestate: openProjectExpand,color: 'rgba(0, 159, 186, 0.85)', size: 'small' },
@@ -1674,7 +1674,7 @@ function handleShow(name) {
         if(lowerCaseName === 'winamp') clippySongFunction();
         if(lowerCaseName === 'msn') clippyUsernameFunction();
         if(lowerCaseName === 'nft') {
-          handleDoubleClickiframe('Nft', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
+          handleDoubleClickiframe(setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
         if(lowerCaseName === 'note') {
@@ -1708,7 +1708,7 @@ function handleShow(name) {
   if(tap.includes(name)) return;
   setStartActive(false);
 
-  const notToOpenList = ['Run', 'Nft', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+  const notToOpenList = ['Run', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
   if (notToOpenList.includes(name)) return;
 
   setTap(prevTap => [...prevTap, name]);
@@ -1782,7 +1782,7 @@ function handleShowMobile(name) {
         if(lowerCaseName === 'winamp') clippySongFunction();
         if(lowerCaseName === 'msn') clippyUsernameFunction();
         if(lowerCaseName === 'nft') {
-          handleDoubleClickiframe('Nft', setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
+          handleDoubleClickiframe(setOpenProjectExpand, setProjectUrl, setBackTrackIe, setForwardTrackIe)
           handleShow('Internet');
         }
         if(lowerCaseName === 'note') {
@@ -1813,7 +1813,7 @@ function handleShowMobile(name) {
     if(tap.includes(name)) return;
     setStartActive(false)
   
-    const notToOpenList = ['Run', 'Nft', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
+    const notToOpenList = ['Run', 'Note', 'Fortune', 'Bitcoin', 'PixelPic','IE'];
     if (notToOpenList.includes(name)) return;
   
     setTap(prevTap => [...prevTap, name]);
